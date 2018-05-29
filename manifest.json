@@ -1,0 +1,27 @@
+{
+	"manifest_version": 3,
+
+	"name": "Rakuten Reports Merger",
+	"version": "0.0.4",
+
+	"background": {
+		"scripts": ["bg.js"],
+		"persistent": false
+	},
+
+	"content_scripts": [{
+		"matches": ["https://rdatatool.rms.rakuten.co.jp/access/*"],
+		"js": ["encoding.min.js", "jquery-3.2.1.min.js", "content.js"],
+		"run_at": "document_end"
+	}],
+
+	"browser_action": {
+		"name": "R"
+	},
+
+    "permissions": [
+        "webNavigation",
+        "activeTab",
+		"*://*.xibao100.com/"
+    ]
+}
